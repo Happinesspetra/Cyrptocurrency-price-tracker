@@ -47,8 +47,6 @@
                         <option value="aud">AUD</option>
                         <option value="cad">CAD</option>                        
                     </select>
-                    <!-- Add the chart container -->
-    <canvas id="priceChart" width="200" height="200"></canvas>
 
                     <button class="btn btn-outline-light" onclick="convertCurrency()" style="background-color: #ffcc00; border-color: #ffcc00;">Convert</button>
                 </div>
@@ -97,7 +95,9 @@
             </p>
         </div>
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
+        <script src="chart.js"></script>
+
 </body>
 </html>
