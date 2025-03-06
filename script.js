@@ -58,6 +58,10 @@ window.onload = function () {
     if (localStorage.getItem("theme") === "dark") {
         document.body.classList.add("dark-mode");
     }
+
+    // Fetch data on page load
+    fetchCryptoData();
+    fetchNews();
 };
 
 // Portfolio Tracker
@@ -71,7 +75,6 @@ document.getElementById("add-portfolio").addEventListener("click", () => {
         document.getElementById("portfolio-input").value = "";
     }
 });
-
 
 // Scroll Up Button
 const scrollUpBtn = document.getElementById("scrollUpBtn");
