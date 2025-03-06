@@ -36,7 +36,7 @@
         <!-- CURRENCY CONVERTER (Less Space) -->
         <div class="row mt-3">
             <div class="col-md-6 mx-auto">
-                </div><h4>Convert BTC to Other Currencies</h4>
+                <h4>Convert BTC to Other Currencies</h4>
                 <div class="input-group">
                     <input type="number" id="btcAmount" class="form-control" placeholder="Enter BTC amount">
                     <select id="currency" class="form-select">
@@ -47,19 +47,21 @@
                         <option value="aud">AUD</option>
                         <option value="cad">CAD</option>                        
                     </select>
-         
                     <button class="btn btn-outline-light" onclick="convertCurrency()" style="background-color: #ffcc00; border-color: #ffcc00;">Convert</button>
                 </div>
                 <h5 class="mt-3">Converted Amount: <span id="convertedAmount">-</span></h5>
             </div>
         </div>
 
-        <div class="row mt-4">
+        <!-- PORTFOLIO TRACKER (Less Space) -->
+        <div class="row mt-3">
             <div class="col-md-6 mx-auto">
-                <h2>Portfolio Tracker</h2>
-                <input type="text" id="portfolio-input" class="form-control" placeholder="Enter coin symbol">
-                <button id="add-portfolio" class="btn btn-outline-light mt-2" style="background-color: #ffcc00; border-color: #ffcc00;">Add to Portfolio</button>
-                <ul id="portfolio-list" class="list-group mt-2"></ul>
+                <h4>Portfolio Tracker</h4>
+                <div class="input-group">
+                    <input type="text" id="portfolio-input" class="form-control" placeholder="Enter coin symbol">
+                    <button id="add-portfolio" class="btn btn-outline-light" style="background-color: #ffcc00; border-color: #ffcc00;">Add to Portfolio</button>
+                </div>
+                <ul id="portfolio-list" class="list-group mt-3"></ul>
             </div>
         </div>
 
@@ -71,9 +73,8 @@
         </div>
     </div>
 
-    
     <!-- SCROLL-UP BUTTON -->
-    <button id="scrollUpBtn" class="btn btn-outline-light scroll-up" >↑</button>
+    <button id="scrollUpBtn" class="btn btn-outline-light scroll-up">↑</button>
 
     <!-- FOOTER SECTION -->
     <footer class="bg-dark text-white text-center py-3 mt-5">
