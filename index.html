@@ -3,40 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cryptocurrency Price Tracker</title>
+    <title>Crypto Price Tracker</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    <!-- Add the crypto cards container -->
-    <div id="cryptoCards" class="row"></div>
 
-    <!-- Add the chart container -->
-    <canvas id="priceChart" width="400" height="200"></canvas>
+    <!-- NAVBAR (Fixed) -->
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="https://github.com/Happinesspetra">💰 Crypto Tracker</a>
+            <button id="darkModeToggle" class="btn btn-outline-light" style="background-color: #ffcc00;">Dark Mode</button>
+        </div>
+    </nav>
+    
+    <!-- MAIN CONTAINER (Added padding to avoid navbar overlap) -->
+    <div class="container mt-5 pt-4">
+        <div class="row">
+            <!-- CRYPTO PRICE CARDS -->
+            <div id="cryptoCards" class="row row-cols-1 row-cols-md-3 g-3"></div>
+        </div>
 
-    <!-- Add the news container -->
-    <div id="news"></div>
+        <!-- CHART SECTION (Less Space) -->
+        <div class="row mt-3">
+            <div class="col-md-8 mx-auto">
+                <canvas id="priceChart"></canvas>
+            </div>
+        </div>
 
-    <!-- Add the scroll up button -->
-    <button id="scrollUpBtn">Scroll Up</button>
+        <!-- CURRENCY CONVERTER (Less Space) -->
+        <div class="row mt-3">
+            <div class="col-md-6 mx-auto">
+                <h4>Convert BTC to Other Currencies</h4>
+                <div class="input-group">
+                    <input type="number" id="btcAmount" class="form-control" placeholder="Enter BTC amount">
+                    <select id="currency" class="form-select">
+                        <option value="usd">USD</option>
+                        <option value="eur">EUR</option>
+                        <option value="gbp">GBP</option>
+                        <option value="jpy">JPY</option>
+                        <option value="aud">AUD</option>
+                        <option value="cad">CAD</option>                        
+                    </select>
+                    <button class="btn btn-outline-light" onclick="convertCurrency()" style="background-color: #ffcc00; border-color: #ffcc00;">Convert</button>
+                </div>
+                <h5 class="mt-3">Converted Amount: <span id="convertedAmount">-</span></h5>
+            </div>
+        </div>
 
-    <!-- Add other necessary elements -->
-    <input type="text" id="btcAmount" placeholder="Enter BTC amount">
-    <select id="currency">
-        <option value="usd">USD</option>
-        <option value="eur">EUR</option>
-        <!-- Add more options as needed -->
-    </select>
-    <button onclick="convertCurrency()">Convert</button>
-    <div id="convertedAmount"></div>
+        <!-- PORTFOLIO TRACKER (Less Space) -->
+        <div class="row mt-3">
+            <div class="col-md-6 mx-auto">
+                <h4>Portfolio Tracker</h4>
+                <div class="input-group">
+                    <input type="text" id="portfolio-input" class="form-control" placeholder="Enter coin symbol">
+                    <button id="add-portfolio" class="btn btn-outline-light" style="background-color: #ffcc00; border-color: #ffcc00;">Add to Portfolio</button>
+                </div>
+                <ul id="portfolio-list" class="list-group mt-3"></ul>
+            </div>
+        </div>
 
-    <button id="darkModeToggle">Toggle Dark Mode</button>
+        <div class="row mt-4">
+            <div class="col-md-8 mx-auto">
+                <h2>Crypto News</h2>
+                <div id="news"></div>
+            </div>
+        </div>
+    </div>
 
-    <input type="text" id="portfolio-input" placeholder="Enter coin symbol">
-    <button id="add-portfolio">Add to Portfolio</button>
-    <ul id="portfolio-list"></ul>
+    <!-- SCROLL-UP BUTTON -->
+    <button id="scrollUpBtn" class="btn btn-outline-light scroll-up">↑</button>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- FOOTER SECTION -->
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <p>&copy; 2025 Crypto Price Tracker. All rights reserved.</p>
+            <p>Developed by <a href="https://github.com/Happinesspetra" class="text-white">HappiBo.</a></p>
+            <p>
+                <a href="https://twitter.com/Happine47968980" class="text-white me-2">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://instagram.com/happibo_" class="text-white me-2">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://linkedin.com/in/happiness-michael-26b20a244" class="text-white">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </p>
+        </div>
+    </footer>
+
     <script src="script.js"></script>
-    <script src="chart.js"></script>
 </body>
 </html>
